@@ -10,12 +10,14 @@ import PageAction from "../modules/order-card/components/page-action";
 import PositionSize from "../modules/order-card/components/position-size-section";
 import CollateralizationRatio from "../modules/order-card/components/collateralization-ratio";
 import SpotChange from "../modules/order-card/components/spot-change";
+// import Toast from "../common/components/toast";
 
 import { StyledSectionBox } from "../modules/order-card/styles/styled-box-section";
 
 const Home: NextPage = () => {
   return (
     <Main>
+      {/* <Toast /> */}
       <div className="page-content">
         <DescriptionSection />
         <StyledSectionBox>
@@ -50,6 +52,8 @@ const Main = styled.main`
   border: 1px solid rgba(220, 218, 233, 0.2);
   max-width: 400px;
   margin: 0 auto;
+  margin-top: 1em;
+  padding-top: 1em;
 
   .info-icon {
     color: rgba(119, 117, 126, 0.5);
