@@ -49,18 +49,25 @@ const DescriptionSection = () => {
 };
 
 const Styles = styled(StyledSectionBox)`
-  .description__topic-container {
+  .description__topic-container,
+  .description__btns,
+  .description__info {
     display: flex;
+  }
+  .description__topic,
+  .description__info-link {
+    font-weight: 500;
+  }
+
+  .description__topic-container {
     align-items: center;
     margin-bottom: 2em;
   }
   .description__topic {
-    font-weight: 500;
     margin-right: 0.25em;
     font-size: 1.5rem;
   }
   .description__btns {
-    display: flex;
     margin-bottom: 1em;
   }
   .description__btn {
@@ -123,7 +130,6 @@ const Styles = styled(StyledSectionBox)`
     margin-right: 0.5em;
   }
   .description__info {
-    display: flex;
     font-size: 0.75rem;
     font-weight: 300;
     line-height: 16px;
@@ -134,7 +140,6 @@ const Styles = styled(StyledSectionBox)`
     margin-right: 0.25em;
   }
   .description__info-link {
-    font-weight: 500;
     color: #292535;
     margin-left: 0.125em;
   }
