@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import BeatLoader from "react-spinners/BeatLoader";
 
 interface IProps extends React.HTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   color?: string;
+  isLoading?: boolean;
 }
 
 export const disabledStyle = () => {
@@ -25,10 +27,10 @@ const StyledButton = styled.button<IProps>`
   background-color: ${({ color }) => (color ? color : "#49d273")};
 `;
 
-const Button = ({ children, color, ...props }: IProps) => {
+const Button = ({ children, color, isLoading, ...props }: IProps) => {
   return (
     <StyledButton color={color} {...props}>
-      {children}
+      {isLoading ? <BeatLoader /> : children}
     </StyledButton>
   );
 };
