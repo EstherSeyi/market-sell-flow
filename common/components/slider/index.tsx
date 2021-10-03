@@ -1,28 +1,18 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
 
-const sliderThumbStyles = (props: any) => `
-  width: 25px;
-  height: 25px;
-  background: ${props.color};
-  cursor: pointer;
-  outline: 5px solid #333;
-  opacity: ${props.opacity};
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-`;
-
 const StyledLabel = styled.label`
+  position: relative;
   display: flex;
   align-items: center;
   color: #888;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 0.75em 0 2.25em 0;
+
   .slider {
     flex: 6;
     -webkit-appearance: none;
     width: 100%;
-    height: 10px;
+    height: 6px;
     border-radius: 5px;
     ${({ min, max, value }: { min: number; max: number; value: number }) => css`
       background: linear-gradient(
@@ -40,21 +30,41 @@ const StyledLabel = styled.label`
       -webkit-appearance: none;
       appearance: none;
       width: 5px;
-      height: 20px;
+      height: 15px;
       background: #49d273;
       cursor: pointer;
-      /* -webkit-transition: 0.2s; */
     }
     &::-moz-range-thumb {
       width: 5px;
       height: 25px;
       background: #49d273;
       cursor: pointer;
-      /* -webkit-transition: 0.2s; */
     }
   }
   .slider {
     width: 100%;
+  }
+  .collateral-range__percent {
+    position: absolute;
+    font-size: 0.5rem;
+    top: 16px;
+    color: #77757e;
+    opacity: 0.7;
+  }
+  .collateral-range__percent--zero-percent {
+    left: 0px;
+  }
+  .collateral-range__percent--twentyfive-percent {
+    left: 25%;
+  }
+  .collateral-range__percent--fifty-percent {
+    left: 50%;
+  }
+  .collateral-range__percent--seventyfive-percent {
+    left: 75%;
+  }
+  .collateral-range__percent--hundred-percent {
+    left: 95%;
   }
 `;
 
@@ -64,8 +74,6 @@ const CollateralSlider = () => {
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     setState(parseFloat(event.currentTarget.value));
   };
-
-  console.log(state);
 
   return (
     <StyledLabel htmlFor="collateral-range" value={state} min={0} max={100}>
@@ -78,6 +86,21 @@ const CollateralSlider = () => {
         onChange={handleChange}
         value={state}
       />
+      <span className="collateral-range__percent collateral-range__percent--zero-percent">
+        0%
+      </span>
+      <span className="collateral-range__percent collateral-range__percent--twentyfive-percent">
+        25%
+      </span>
+      <span className="collateral-range__percent collateral-range__percent--fifty-percent">
+        50%
+      </span>
+      <span className="collateral-range__percent collateral-range__percent--seventyfive-percent">
+        75%
+      </span>
+      <span className="collateral-range__percent collateral-range__percent--hundred-percent">
+        100%
+      </span>
     </StyledLabel>
   );
 };
