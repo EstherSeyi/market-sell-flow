@@ -33,8 +33,6 @@ const PageAction = () => {
     }
   };
 
-  console.log({ currentAccount });
-
   useEffect(() => {
     checkIfWalletIsConnected();
   }, []);
