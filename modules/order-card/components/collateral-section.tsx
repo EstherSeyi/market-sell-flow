@@ -15,7 +15,6 @@ const StyledSection = styled.div`
   }
   .collateral__header-safe {
     color: #49d273;
-    display: flex;
     align-items: center;
   }
   .header-safe__icon {
