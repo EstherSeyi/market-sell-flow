@@ -14,57 +14,59 @@ import { StyledSectionBox } from "../modules/order-card/styles/styled-box-sectio
 const Home: NextPage = () => {
   return (
     <Main>
-      <DescriptionSection />
-      <StyledSectionBox>
-        <div className="market-limit-tabs">
-          <button className="market-tab">Market</button>
-          <button className="limit-tab">Limit</button>
-        </div>
-        <div>
-          <InfoBlock title="position size">
-            <div className="position-size__otoken-section">
-              <span className="position-size__otoken-text">
-                oToken Balance:{" "}
-              </span>
-              <span className="position-size__otoken-bal">21.042</span>
-            </div>
-            <div className="position-size__max-otoken">
-              <span className="position-size__max-otoken-value">100.00</span>
-              <div className="position-size__max-otoken-text">
-                <span className="position-size__max">MAX</span>
-                <span>oTokens</span>
+      <div className="page-content">
+        <DescriptionSection />
+        <StyledSectionBox>
+          <div className="market-limit-tabs">
+            <button className="market-tab">Market</button>
+            <button className="limit-tab">Limit</button>
+          </div>
+          <div>
+            <InfoBlock title="position size">
+              <div className="position-size__otoken-section">
+                <span className="position-size__otoken-text">
+                  oToken Balance:{" "}
+                </span>
+                <span className="position-size__otoken-bal">21.042</span>
               </div>
-            </div>
-          </InfoBlock>
-
-          <InfoBlock title="collateralization ratio">
-            <div className="collateralization-ratio">
-              <span className="collateralization-ratio__value">25</span>
-              <span className="collateralization-ratio__percent">%</span>
-            </div>
-          </InfoBlock>
-          <InfoBlock title="spot change">
-            <div className="spot-change">
-              <ValueAdjuster />
-
-              <div className="spot-change__value-container">
-                <span className="spot-change__value">25</span>
-                <span className="spot-change__percent">%</span>
+              <div className="position-size__max-otoken">
+                <span className="position-size__max-otoken-value">100.00</span>
+                <div className="position-size__max-otoken-text">
+                  <span className="position-size__max">MAX</span>
+                  <span>oTokens</span>
+                </div>
               </div>
-            </div>
-          </InfoBlock>
-          <CollateralSlider />
+            </InfoBlock>
 
-          <InfoBlock secondary title="Liquidation price">
-            <span>~$146.79</span>
-          </InfoBlock>
-          <InfoBlock secondary title="Collateral">
-            <span>$100.00</span>
-          </InfoBlock>
-          <TxAction />
-          <TxSummary />
-        </div>
-      </StyledSectionBox>
+            <InfoBlock title="collateralization ratio">
+              <div className="collateralization-ratio">
+                <span className="collateralization-ratio__value">25</span>
+                <span className="collateralization-ratio__percent">%</span>
+              </div>
+            </InfoBlock>
+            <InfoBlock title="spot change">
+              <div className="spot-change">
+                <ValueAdjuster />
+
+                <div className="spot-change__value-container">
+                  <span className="spot-change__value">25</span>
+                  <span className="spot-change__percent">%</span>
+                </div>
+              </div>
+            </InfoBlock>
+            <CollateralSlider />
+
+            <InfoBlock secondary title="Liquidation price">
+              <span>~$146.79</span>
+            </InfoBlock>
+            <InfoBlock secondary title="Collateral">
+              <span>$100.00</span>
+            </InfoBlock>
+            <TxAction />
+            <TxSummary />
+          </div>
+        </StyledSectionBox>
+      </div>
       <div className="page-action__container">
         <Button className="page-action__btn" color="#CD6116">
           CONNECT TO METAMASK
@@ -84,10 +86,13 @@ const Main = styled.main`
     width: 14px;
     height: 14px;
   }
+  .page-content {
+    height: calc(100vh - 37px - 3rem);
+    overflow-y: scroll;
+  }
 
   .page-action__container {
     box-shadow: 0px 4px 10px rgba(222, 222, 222, 0.5);
-    margin-top: 1em;
     padding: 1em;
   }
   .page-action__btn {
