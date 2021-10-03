@@ -54,12 +54,13 @@ const Styles = styled.div`
     padding: 0.5em 0;
   }
   .tx-summary__others-item {
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
   }
 
   .other-items__title-section {
     display: flex;
     align-items: center;
+    margin-bottom: 0.25em;
   }
 
   .other-items__title {
