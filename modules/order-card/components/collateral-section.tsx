@@ -4,6 +4,23 @@ import Safe from "../../../public/svgs/safe.svg";
 
 import Slider from "../../../common/components/slider";
 
+const CollateralSlider = () => {
+  return (
+    <StyledSection>
+      <div className="collateral__header">
+        <div className="collateral__header-safe">
+          <Safe className="header-safe__icon" />
+          <span className="header-safe__text">SAFE</span>
+        </div>
+        <span className="collateral__header-text">Collateral %</span>
+      </div>
+      <Slider />
+    </StyledSection>
+  );
+};
+
+export default CollateralSlider;
+
 const StyledSection = styled.div`
   .collateral__header,
   .collateral__header-safe {
@@ -33,20 +50,3 @@ const StyledSection = styled.div`
     line-height: 14px;
   }
 `;
-
-const CollateralSlider = () => {
-  return (
-    <StyledSection>
-      <div className="collateral__header">
-        <div className="collateral__header-safe">
-          <Safe className="header-safe__icon" />
-          <span className="header-safe__text">SAFE</span>
-        </div>
-        <span className="collateral__header-text">Collateral %</span>
-      </div>
-      <Slider />
-    </StyledSection>
-  );
-};
-
-export default CollateralSlider;
