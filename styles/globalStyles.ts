@@ -37,6 +37,7 @@ button
   text-transform: none;
   border-style: none;
   cursor: pointer;
+  background:none;
   &:focus{
     outline:none;
   }
