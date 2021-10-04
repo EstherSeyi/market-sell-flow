@@ -33,6 +33,7 @@ const StyledContainer = styled.div`
     margin: 0 0.5em;
   }
   .position-size__max-otoken-value {
+    width: 50%;
     font-size: 20px;
     line-height: 20px;
     border-style: none;
