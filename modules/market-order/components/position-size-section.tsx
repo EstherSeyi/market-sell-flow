@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 import InfoBlock from "./info-block";
 
+import data from "../static/dummy-data.json";
+import formatNumber from "../utils/format-number";
+
 const StyledContainer = styled.div`
   .position-size__otoken-section {
     display: flex;
@@ -64,7 +67,9 @@ const PositionSize = () => {
       <StyledContainer>
         <div className="position-size__otoken-section">
           <span className="position-size__otoken-text">oToken Balance: </span>
-          <span className="position-size__otoken-bal">21.042</span>
+          <span className="position-size__otoken-bal">
+            {formatNumber(data.oToken_balance, 3)}
+          </span>
         </div>
         <div className="position-size__max-otoken">
           <input

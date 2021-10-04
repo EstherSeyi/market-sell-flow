@@ -7,6 +7,8 @@ import PutIcon from "../../../public/svgs/alt-inverted-arrows.svg";
 import Info from "../../../public/svgs/info.svg";
 
 import { disabledStyle } from "../../../common/components/button";
+import data from "../static/dummy-data.json";
+import formatExpiryDate from "../utils/format-expiry-date";
 
 const DescriptionSection = () => {
   return (
@@ -26,13 +28,17 @@ const DescriptionSection = () => {
         </div>
         <div className="description__token-date">
           <span className="description__token">WETH</span>
-          <span className="description__date">FRI, 30 APR 2021</span>
+          <span className="description__date">
+            {formatExpiryDate(data.expiry_date)}
+          </span>
         </div>
         <div className="description__strike-section">
           <PutIcon className="description__strike-icon" />
           <span className="description__strike-text">PUT</span>
           <span className="description__strike-dash">--</span>
-          <span className="description__strike-value">$2080 STRIKE</span>
+          <span className="description__strike-value">
+            ${data.strike} STRIKE
+          </span>
         </div>
         <div className="description__info">
           <Info className="info-icon description__info-icon" />
@@ -109,6 +115,7 @@ const Styles = styled(StyledSectionBox)`
   .description__date {
     font-size: 0.75rem;
     color: #77757e;
+    text-transform: uppercase;
   }
   .description__token-date {
     margin-bottom: 0.75em;
