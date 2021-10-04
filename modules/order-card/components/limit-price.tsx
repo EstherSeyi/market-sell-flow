@@ -18,14 +18,14 @@ const StyledLimitPrice = styled.div`
   padding: 0 0.5em;
 
   .limit-price__value {
-    color: #292535;
+    color: var(--color-dark);
     line-height: 22px;
   }
   .limit-price__currency {
-    color: #77757e;
-    font-weight: 300;
+    color: var(--color-grey-3);
+    font-weight: var(--fontweight-reg);
     font-size: 0.75rem;
     line-height: 14px;
-    font-family: Roboto;
+    font-family: var(--fontfamily-secondary);
   }
 `;

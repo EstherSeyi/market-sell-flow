@@ -1,23 +1,53 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-* {
+html {
+  overscroll-behavior: contain none !important;
+  scroll-behavior: smooth;
   box-sizing: border-box;
-  margin: 0;
-    padding: 0;
 }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Properties*/
+
+:root {
+  --fontfamily-primary: 'Avenir', sans-serif;
+  --fontfamily-secondary: 'Roboto', sans-serif;
+
+  --fontweight-reg: 300;
+  --fontweight-medium: 500;
+  --fontweight-bold: 800;
+
+  --color-light: #ffffff;
+  --color-grey-1: #dcdae9;
+  --color-grey-2: #dee2e6;
+  --color-grey-3: #77757e;
+  --color-green-1: #49d273;
+  --color-green-2: #b2f0c5;
+  --color-blue: #4dadf3;
+  --color-brown: #CD6116;
+  --color-dark: #292535;
+  --color-red: #ec7987;
+
+  --fontsize-body: 1rem;
+}
+
   body {
     margin: 0;
     padding: 0;
-    font-family: Avenir;
+    font-family: var(--fontfamily-primary);
+    font-size: var(--fontsize-body)
   }
   ul {
 list-style-type: none;}
-
-  .flex-justify-between{
-    display:flex;
-    justify-content:space-between;
-  }
 
 button,
 input{

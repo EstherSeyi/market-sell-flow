@@ -11,47 +11,46 @@ const Styled = styled.div`
   .txaction__icon {
     width: 16px;
     height: 16px;
-    color: #77757e;
+    color: var(--color-grey-3);
     margin-right: 0.25em;
   }
   .txaction__icon--info--disabled {
-    color: #77757e;
+    color: var(--color-grey-3);
   }
 
   .tx-action__title {
-    font-weight: 300;
+    font-weight: var(--fontweight-reg);
     font-size: 0.75em;
     line-height: 16px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #292535;
+    color: var(--color-dark);
     margin-bottom: 0.5625em;
   }
   .txaction__item {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5em;
-    color: #292535;
+    color: var(--color-dark);
   }
   .txaction__item-text {
-    font-family: Roboto;
+    font-family: var(--fontfamily-secondary);
   }
 `;
 const StyledItem = styled.li<{ isCurrent: boolean }>`
   .txaction__item-text {
     flex-basis: 80%;
-    font-weight: 300;
+    font-weight: var(--fontweight-reg);
     font-size: 0.75rem;
     line-height: 14px;
-    font-weight: 300;
-    color: #77757e;
+    color: var(--color-grey-3);
 
     ${({ isCurrent }) =>
       isCurrent &&
       css`
         text-decoration: underline;
-        color: #292535;
-        font-weight: 800;
+        color: var(--color-dark);
+        font-weight: var(--fontweight-bold);
       `}
   }
 
@@ -59,7 +58,7 @@ const StyledItem = styled.li<{ isCurrent: boolean }>`
     ${({ isCurrent }) =>
       isCurrent &&
       css`
-        color: #292535;
+        color: var(--color-dark);
       `}
   }
   .txaction__icon--info {

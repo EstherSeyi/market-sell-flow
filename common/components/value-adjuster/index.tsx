@@ -29,7 +29,7 @@ const StyledContainer = styled.div`
     height: 12px;
   }
   .minus-icon {
-    color: #77757e;
+    color: var(--color-grey-3);
     opacity: 0.4;
   }
   .value-adjuster-btn {
@@ -38,11 +38,11 @@ const StyledContainer = styled.div`
     padding: 0.25em;
   }
   .value-adjuster-btn--increament {
-    background: #77757e;
+    background: var(--color-grey-3);
     border-radius: 9999px;
     padding: 0 0.25em;
     margin-left: 0.35em;
-    font-weight: 800;
+    font-weight: var(--fontweight-bold);
   }
 `;
 

@@ -20,11 +20,11 @@ const StyledToast = styled.div`
     justify-content: center;
     flex-direction: column;
     z-index: 5;
-    background: #ffffff;
+    background: var(--color-light);
     border-radius: 6px;
     box-shadow: 0px 4px 10px rgba(222, 222, 222, 0.5);
     padding: 0.5em 1em;
-    font-weight: 300;
+    font-weight: var(--fontweight-reg);
     font-size: 0.75rem;
     width: 90%;
     max-width: 400px;
@@ -37,7 +37,7 @@ const StyledToast = styled.div`
   }
 
   .toast__icon--success {
-    color: #49d273;
+    color: var(--color-green-1);
   }
   .toast__text {
     text-align: center;
@@ -45,7 +45,7 @@ const StyledToast = styled.div`
   .home-button {
     background: none;
     text-decoration: underline;
-    color: #4dadf3;
+    color: var(--color-blue);
     margin-top: 0.5em;
   }
 `;

@@ -98,7 +98,7 @@ export default TxSummary;
 const Styles = styled.div`
   margin: 1em 0;
   padding-top: 1em;
-  color: #77757e;
+  color: var(--color-grey-3);
   background: rgba(220, 218, 233, 0.2);
   border-radius: 4px;
   .tx-summary-container,
@@ -110,32 +110,32 @@ const Styles = styled.div`
   }
 
   .tx-summary__title {
-    font-weight: 500;
+    font-weight: var(--fontweight-medium);
     line-height: 16px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #292535;
+    color: var(--color-dark);
     margin-bottom: 1em;
   }
 
   .tx-summary__premium {
-    border-bottom: 1px solid #dcdae9;
+    border-bottom: 1px solid var(--color-grey-1);
     padding-bottom: 0.5em;
     margin-bottom: 0.75em;
   }
 
   .tx-summary__premium-title {
-    color: #292535;
+    color: var(--color-dark);
     display: flex;
     align-items: center;
   }
   .tx-summary__premium-subtitle {
-    font-weight: 300;
+    font-weight: var(--fontweight-reg);
     font-size: 0.875rem;
     line-height: 16px;
   }
   .tx-summary__premium-subtitle {
-    font-family: Roboto;
+    font-family: var(--fontfamily-secondary);
   }
   .tx-summary__premium-title-text {
     margin-right: 0.25em;
@@ -163,22 +163,22 @@ const Styles = styled.div`
     font-size: 0.875rem;
     margin-right: 0.25em;
     line-height: 19px;
-    font-weight: 300;
+    font-weight: var(--fontweight-reg);
     margin-bottom: 0.25rem;
   }
 
   .other-items__value-currency {
     font-size: 0.625rem;
-    font-family: Roboto;
-    font-weight: 300;
+    font-family: var(--fontfamily-secondary);
+    font-weight: var(--fontweight-reg);
     line-height: 12px;
   }
   .other-items__title-section--total {
     margin-bottom: 0.5em;
   }
   .other-items__value--total {
-    color: #292535;
-    font-weight: 800;
+    color: var(--color-dark);
+    font-weight: var(--fontweight-bold);
     margin-right: 0.5em;
   }
 `;

@@ -62,7 +62,7 @@ const Styles = styled(StyledSectionBox)`
   }
   .description__topic,
   .description__info-link {
-    font-weight: 500;
+    font-weight: var(--fontweight-medium);
   }
 
   .description__topic-container {
@@ -77,44 +77,44 @@ const Styles = styled(StyledSectionBox)`
     margin-bottom: 1em;
   }
   .description__btn {
-    font-weight: 800;
+    font-weight: var(--fontweight-bold);
     line-height: 19px;
   }
 
   .description__btn--buy {
-    border: 1px solid #49d273;
-    background: #ffffff;
-    color: #49d273;
+    border: 1px solid var(--color-green-1);
+    background: var(--color-light);
+    color: var(--color-green-1);
     margin-right: 1em;
     flex-basis: 50%;
 
     &:hover,
     &:focus {
-      background: #b2f0c5;
+      background: var(--color-green-2);
     }
     ${disabledStyle()}
   }
   .description__btn--sell {
-    border: 1px solid #ec7987;
-    background: #ffffff;
-    color: #ec7987;
+    border: 1px solid var(--color-red);
+    background: var(--color-light);
+    color: var(--color-red);
     margin-right: 1em;
     flex-basis: 50%;
     &:hover,
     &:focus {
-      background: #ec7987;
-      color: #ffffff;
+      background: var(--color-red);
+      color: var(--color-light);
     }
     ${disabledStyle()}
   }
   .description__token {
     font-size: 1.125rem;
-    font-weight: 800;
+    font-weight: var(--fontweight-bold);
     margin-right: 0.5em;
   }
   .description__date {
     font-size: 0.75rem;
-    color: #77757e;
+    color: var(--color-grey-3);
     text-transform: uppercase;
   }
   .description__token-date {
@@ -127,8 +127,8 @@ const Styles = styled(StyledSectionBox)`
   .description__strike-text,
   .description__strike-value,
   .description__strike-dash {
-    font-weight: 300;
-    color: #292535;
+    font-weight: var(--fontweight-reg);
+    color: var(--color-dark);
     font-size: 0.75rem;
     line-height: 16px;
     margin-right: 0.25em;
@@ -138,16 +138,16 @@ const Styles = styled(StyledSectionBox)`
   }
   .description__info {
     font-size: 0.75rem;
-    font-weight: 300;
+    font-weight: var(--fontweight-reg);
     line-height: 16px;
     margin-top: 0.8125em;
-    color: #292535;
+    color: var(--color-dark);
   }
   .description__info-icon {
     margin-right: 0.25em;
   }
   .description__info-link {
-    color: #292535;
+    color: var(--color-dark);
     margin-left: 0.125em;
   }
 `;

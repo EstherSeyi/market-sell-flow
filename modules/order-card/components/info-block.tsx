@@ -11,21 +11,21 @@ const StyledInfoBlock = styled.div<{ secondary?: boolean }>`
     margin-bottom: 0.5em;
   }
   .info-title {
-    font-weight: 500;
+    font-weight: var(--fontweight-medium);
     font-size: 0.75rem;
     text-transform: uppercase;
-    color: #292535;
+    color: var(--color-dark);
     margin-right: 0.5em;
     line-height: 16px;
     letter-spacing: 0.1em;
   }
   .info-content {
-    border: 1px solid #dcdae9;
+    border: 1px solid var(--color-grey-1);
     padding: 0.5em 0.25em;
     border-radius: 4px;
     line-height: 22px;
-    color: #77757e;
-    font-weight: 300;
+    color: var(--color-grey-3);
+    font-weight: var(--fontweight-reg);
 
     ${({ secondary }) => {
       return (

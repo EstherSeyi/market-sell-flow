@@ -26,21 +26,21 @@ const StyledDeadlineAction = styled.div`
   padding: 0 0.5em;
 
   .deadline-value {
-    font-weight: 300;
+    font-weight: var(--fontweight-reg);
     line-height: 22px;
     border-style: none;
-    color: #292535;
+    color: var(--color-dark);
     width: 50%;
     &:focus {
       outline: none;
     }
   }
   .deadline-metric {
-    font-family: Roboto;
-    font-weight: 300;
+    font-family: var(--fontfamily-secondary);
+    font-weight: var(--fontweight-reg);
     font-size: 0.75rem;
     line-height: 14px;
-    color: #4dadf3;
+    color: var(--color-blue);
     display: flex;
     align-items: center;
   }

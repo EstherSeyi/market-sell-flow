@@ -5,7 +5,7 @@ const StyledLabel = styled.label`
   position: relative;
   display: flex;
   align-items: center;
-  color: #888;
+  color: var(--color-grey-1);
   margin: 0.75em 0 2.25em 0;
 
   .slider {
@@ -18,10 +18,10 @@ const StyledLabel = styled.label`
     ${({ min, max, value }: { min: number; max: number; value: number }) => css`
       background: linear-gradient(
         to right,
-        #49d273 0%,
-        #49d273 ${((value - min) / (max - min)) * 100}%,
-        #dee2e6 ${((value - min) / (max - min)) * 100}%,
-        #dee2e6 100%
+        var(--color-green-1) 0%,
+        var(--color-green-1) ${((value - min) / (max - min)) * 100}%,
+        var(--color-grey-2) ${((value - min) / (max - min)) * 100}%,
+        var(--color-grey-2) 100%
       );
     `};
     outline: none;
@@ -32,13 +32,13 @@ const StyledLabel = styled.label`
       appearance: none;
       width: 5px;
       height: 15px;
-      background: #49d273;
+      background: var(--color-green-1);
       cursor: pointer;
     }
     &::-moz-range-thumb {
       width: 5px;
       height: 25px;
-      background: #49d273;
+      background: var(--color-green-1);
       cursor: pointer;
     }
   }
@@ -49,7 +49,7 @@ const StyledLabel = styled.label`
     position: absolute;
     font-size: 0.5rem;
     top: 16px;
-    color: #77757e;
+    color: var(--color-grey-3);
     opacity: 0.7;
   }
   .collateral-range__percent--zero-percent {

@@ -36,7 +36,7 @@ const ConnectWallet = ({
   return (
     <Button
       className="page-action__btn"
-      color="#CD6116"
+      color="var(--color-brown)"
       onClick={handleConnectWallet}
       isLoading={connecting}
     >

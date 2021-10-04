@@ -29,7 +29,7 @@ export const StyledMarketOrderSection = styled.section`
     font-size: 0.75rem;
     letter-spacing: 0.1em;
     line-height: 16px;
-    font-weight: 300;
+    font-weight: var(--fontweight-reg);
     cursor: pointer;
 
     background: rgba(220, 218, 233, 0.2);
@@ -40,7 +40,7 @@ export const StyledMarketOrderSection = styled.section`
       border-style: none;
     }
     &:hover {
-      font-weight: 500;
+      font-weight: var(--fontweight-medium);
     }
   }
 

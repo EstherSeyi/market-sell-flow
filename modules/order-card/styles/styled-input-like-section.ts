@@ -8,16 +8,16 @@ const StyledInputLikeSection = styled.div`
 
   .collateralization-ratio__value,
   .spot-change__value {
-    color: #292535;
+    color: var(--color-dark);
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: var(--fontweight-reg);
     line-height: 22px;
   }
   .collateralization-ratio__percent,
   .spot-change__percent {
     font-size: 0.75rem;
     line-height: 16px;
-    color: #77757e;
+    color: var(--color-grey-3);
   }
   .spot-change__value-container {
     display: flex;

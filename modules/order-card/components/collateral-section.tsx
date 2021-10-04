@@ -31,7 +31,7 @@ const StyledSection = styled.div`
     align-items: center;
   }
   .collateral__header-safe {
-    color: #49d273;
+    color: var(--color-green-1);
     align-items: center;
   }
   .header-safe__icon {
@@ -45,8 +45,8 @@ const StyledSection = styled.div`
   }
   .collateral__header-text {
     font-size: 0.625rem;
-    color: #77757e;
-    font-weight: 500;
+    color: var(--color-grey-3);
+    font-weight: var(--fontweight-medium);
     line-height: 14px;
   }
 `;

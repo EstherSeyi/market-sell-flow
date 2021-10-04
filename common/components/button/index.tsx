@@ -11,7 +11,7 @@ interface IProps extends React.HTMLAttributes<HTMLButtonElement> {
 export const disabledStyle = () => {
   return `&:disabled {
     background-color: rgba(119, 117, 126, 0.4);
-    color: #ffffff;
+    color: var(--color-light);
     border-style: none;
     cursor: not-allowed;
   }`;
@@ -21,7 +21,7 @@ const StyledButton = styled.button<IProps>`
   padding: 0.75em 1.5em;
   text-transform: uppercase;
   border-radius: 4px;
-  color: #ffffff;
+  color: var(--color-light);
   font-size: 14px;
   cursor: pointer;
   background-color: ${({ color }) => (color ? color : "#49d273")};

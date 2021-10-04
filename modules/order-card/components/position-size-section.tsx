@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
     background-color: rgba(220, 218, 233, 0.3);
     padding: 0.25em;
     border-radius: 2px;
-    color: #77757e;
+    color: var(--color-grey-3);
     margin-bottom: 0.6875em;
   }
 
@@ -24,7 +24,7 @@ const StyledContainer = styled.div`
   }
   .position-size__otoken-bal {
     font-size: 0.75rem;
-    font-weight: 800;
+    font-weight: var(--fontweight-bold);
     line-height: 12px;
   }
   .position-size__max-otoken {
@@ -37,7 +37,7 @@ const StyledContainer = styled.div`
     font-size: 20px;
     line-height: 20px;
     border-style: none;
-    color: #292535;
+    color: var(--color-dark);
     &:focus {
       outline: none;
     }
@@ -49,8 +49,8 @@ const StyledContainer = styled.div`
   .position-size__max {
     font-size: 0.5rem;
     padding: 0.25em;
-    color: #4dadf3;
-    border: 1px solid #4dadf3;
+    color: var(--color-blue);
+    border: 1px solid var(--color-blue);
     border-radius: 4px;
     margin-right: 0.5em;
   }
