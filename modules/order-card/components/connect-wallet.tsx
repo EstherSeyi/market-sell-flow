@@ -1,7 +1,16 @@
 import { useState } from "react";
 import Button from "../../../common/components/button";
 
-const ConnectWallet = ({ setCurrentAccount, setWalletIsConnected }: any) => {
+import { useStep } from "../custom-hooks/use-step";
+
+const ConnectWallet = ({
+  setCurrentAccount,
+  setWalletIsConnected,
+}: {
+  setCurrentAccount: (currAccount: string) => void;
+  setWalletIsConnected: (isConnected: boolean) => void;
+}) => {
+  const { handleCurrentStep } = useStep();
   const [connecting, setConnecting] = useState(false);
   const handleConnectWallet = async () => {
     try {
@@ -19,6 +28,7 @@ const ConnectWallet = ({ setCurrentAccount, setWalletIsConnected }: any) => {
 
       setCurrentAccount(accounts[0]);
       setWalletIsConnected(true);
+      handleCurrentStep(1);
       setConnecting(false);
     } catch (error) {
       setConnecting(false);
