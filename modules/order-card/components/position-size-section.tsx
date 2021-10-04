@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 import InfoBlock from "./info-block";
@@ -31,6 +32,11 @@ const StyledContainer = styled.div`
   .position-size__max-otoken-value {
     font-size: 20px;
     line-height: 20px;
+    border-style: none;
+    color: #292535;
+    &:focus {
+      outline: none;
+    }
   }
   .position-size__max-otoken-text {
     font-size: 0.625rem;
@@ -47,6 +53,12 @@ const StyledContainer = styled.div`
 `;
 
 const PositionSize = () => {
+  const [positionSize, setPositionSize] = useState("100");
+  const handlePositionSize = (event: React.FormEvent<HTMLInputElement>) => {
+    let target = event.target as HTMLInputElement;
+    setPositionSize(target.value);
+  };
+
   return (
     <InfoBlock title="position size">
       <StyledContainer>
@@ -55,7 +67,12 @@ const PositionSize = () => {
           <span className="position-size__otoken-bal">21.042</span>
         </div>
         <div className="position-size__max-otoken">
-          <span className="position-size__max-otoken-value">100.00</span>
+          <input
+            className="position-size__max-otoken-value"
+            onChange={handlePositionSize}
+            value={positionSize}
+            type="number"
+          />
           <div className="position-size__max-otoken-text">
             <span className="position-size__max">MAX</span>
             <span>oTokens</span>
