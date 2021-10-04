@@ -69,7 +69,7 @@ const StyledLabel = styled.label`
 `;
 
 const CollateralSlider = () => {
-  const [state, setState] = useState(0);
+  const [state, setState] = useState(75);
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     setState(parseFloat(event.currentTarget.value));
