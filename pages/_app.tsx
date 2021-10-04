@@ -4,6 +4,7 @@ import Head from "next/head";
 import "../styles/global.css";
 
 import GlobalStyle from "../styles/globalStyles";
+import { StepProvider } from "../modules/order-card/custom-hooks/use-step";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -21,7 +22,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         />
       </Head>
-      <Component {...pageProps} />
+      <StepProvider>
+        <Component {...pageProps} />
+      </StepProvider>
     </>
   );
 }
