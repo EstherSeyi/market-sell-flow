@@ -1,0 +1,14 @@
+{
+  "strike": 2080,
+  "collateral_ratio": 0.25,
+  "spot_change": 0.25,
+  "liquidation_price": 146.79,
+  "collateral": 100,
+  "oToken_balance": 21.042,
+  "expiry_date": "2021-04-30 14:01:28.475+00",
+  "estimated_total_cost": 103.937,
+  "market_impact": 0.02,
+  "0x_protocol_fee": 0.0983,
+  "tx_summary_collateral": 0.00234,
+  "total_to_receive": 113.532
+}
