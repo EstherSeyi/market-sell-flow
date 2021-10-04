@@ -7,7 +7,7 @@ import ConnectWallet from "./connect-wallet";
 import { useStep } from "../custom-hooks/use-step";
 
 const PageAction = () => {
-  const { currentStep, handleCurrentStep } = useStep();
+  const { currentStep, handleCurrentStep, setInitialStep, loading } = useStep();
   const [walletIsConnected, setWalletIsConnected] = useState(false);
 
   const checkIfWalletIsConnected = async () => {
@@ -27,7 +27,7 @@ const PageAction = () => {
 
       if (accounts.length !== 0) {
         setWalletIsConnected(true);
-        handleCurrentStep(1);
+        setInitialStep();
       } else {
         setWalletIsConnected(false);
       }
@@ -62,6 +62,7 @@ const PageAction = () => {
         <Button
           className="page-action__btn"
           onClick={() => handleCurrentStep(currentStep + 1)}
+          isLoading={loading}
         >
           Enable WETH Wrapper
         </Button>
@@ -69,6 +70,7 @@ const PageAction = () => {
         <Button
           className="page-action__btn"
           onClick={() => handleCurrentStep(currentStep + 1)}
+          isLoading={loading}
         >
           APPROVE COLLATERAL
         </Button>
@@ -76,6 +78,7 @@ const PageAction = () => {
         <Button
           className="page-action__btn"
           onClick={() => handleCurrentStep(currentStep + 1)}
+          isLoading={loading}
         >
           PERMIT OTOKEN
         </Button>
@@ -83,6 +86,7 @@ const PageAction = () => {
         <Button
           className="page-action__btn"
           onClick={() => handleCurrentStep(currentStep + 1)}
+          isLoading={loading}
         >
           SUBMIT TRADE
         </Button>

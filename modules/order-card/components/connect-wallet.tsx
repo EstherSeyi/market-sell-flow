@@ -8,7 +8,7 @@ const ConnectWallet = ({
 }: {
   setWalletIsConnected: (isConnected: boolean) => void;
 }) => {
-  const { handleCurrentStep } = useStep();
+  const { setInitialStep } = useStep();
   const [connecting, setConnecting] = useState(false);
   const handleConnectWallet = async () => {
     try {
@@ -20,12 +20,12 @@ const ConnectWallet = ({
       }
       setConnecting(true);
 
-      // const accounts = ethereum.request({
-      //   method: "eth_requestAccounts",
-      // });
+      const accounts = ethereum.request({
+        method: "eth_requestAccounts",
+      });
 
       setWalletIsConnected(true);
-      handleCurrentStep(1);
+      setInitialStep();
       setConnecting(false);
     } catch (error) {
       setConnecting(false);

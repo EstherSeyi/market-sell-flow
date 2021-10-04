@@ -62,6 +62,10 @@ button:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
+
+.main{
+  padding:.25em;
+}
 `;
 
 export default GlobalStyle;

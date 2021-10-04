@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
 
-import MarketOrder from "../modules/market-order";
+import MarketOrder from "../modules/order-card";
 
 // import Toast from "../common/components/toast";
 
 const Home: NextPage = () => {
   return (
-    <main>
+    <main className="main">
       {/* <Toast /> */}
       <MarketOrder />
     </main>

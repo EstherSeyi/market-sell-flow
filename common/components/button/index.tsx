@@ -30,7 +30,7 @@ const StyledButton = styled.button<IProps>`
 const Button = ({ children, color, isLoading, ...props }: IProps) => {
   return (
     <StyledButton color={color} {...props}>
-      {isLoading ? <BeatLoader /> : children}
+      {isLoading ? <BeatLoader size={5} color="#ffffff" /> : children}
     </StyledButton>
   );
 };

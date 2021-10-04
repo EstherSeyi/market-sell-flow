@@ -9,13 +9,18 @@ import {
 const StepContext = createContext<{
   currentStep: number;
   handleCurrentStep: (step: number) => void;
+  setInitialStep: () => void;
+  loading: boolean;
 }>({
   currentStep: 1,
-  handleCurrentStep: () => 1,
+  handleCurrentStep: () => null,
+  setInitialStep: () => null,
+  loading: false,
 });
 
 const StepProvider = ({ children }: { children: ReactNode }) => {
   const [currentStep, setCurrentStep] = useState(1);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (currentStep > 4) {
@@ -23,12 +28,21 @@ const StepProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [currentStep]);
 
+  const setInitialStep = () => {
+    setCurrentStep(1);
+  };
   const handleCurrentStep = (step: number) => {
-    setCurrentStep(step);
+    setLoading(true);
+    setTimeout(() => {
+      setCurrentStep(step);
+      setLoading(false);
+    }, 1000);
   };
 
   return (
-    <StepContext.Provider value={{ handleCurrentStep, currentStep }}>
+    <StepContext.Provider
+      value={{ handleCurrentStep, currentStep, loading, setInitialStep }}
+    >
       {children}
     </StepContext.Provider>
   );
