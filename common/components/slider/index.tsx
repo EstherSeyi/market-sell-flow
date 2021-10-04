@@ -13,6 +13,7 @@ const StyledLabel = styled.label`
     -webkit-appearance: none;
     width: 100%;
     height: 6px;
+    z-index: 2;
     border-radius: 5px;
     ${({ min, max, value }: { min: number; max: number; value: number }) => css`
       background: linear-gradient(
