@@ -9,7 +9,6 @@ import { useStep } from "../custom-hooks/use-step";
 const PageAction = () => {
   const { currentStep, handleCurrentStep } = useStep();
   const [walletIsConnected, setWalletIsConnected] = useState(false);
-  const [currentAccount, setCurrentAccount] = useState({});
 
   const checkIfWalletIsConnected = async () => {
     try {
@@ -28,7 +27,6 @@ const PageAction = () => {
 
       if (accounts.length !== 0) {
         setWalletIsConnected(true);
-        setCurrentAccount(accounts[0]);
         handleCurrentStep(1);
       } else {
         setWalletIsConnected(false);
@@ -42,14 +40,24 @@ const PageAction = () => {
     checkIfWalletIsConnected();
   }, [walletIsConnected]);
 
+  useEffect(() => {
+    (() => {
+      if (window.ethereum) {
+        window.ethereum.on("accountsChanged", async (accounts: string[]) => {
+          if (accounts.length > 0) {
+            setWalletIsConnected(true);
+          } else {
+            setWalletIsConnected(false);
+          }
+        });
+      }
+    })();
+  }, []);
+
   return (
     <StyledContainer className="page-action__container">
       {!walletIsConnected ? (
-        <ConnectWallet
-          setCurrentAccount={setCurrentAccount}
-          setWalletIsConnected={setWalletIsConnected}
-          // setStage={setStage}
-        />
+        <ConnectWallet setWalletIsConnected={setWalletIsConnected} />
       ) : currentStep === 1 ? (
         <Button
           className="page-action__btn"
