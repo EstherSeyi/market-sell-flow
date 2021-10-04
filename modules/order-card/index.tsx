@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styled from "styled-components";
 
 import InfoBlock from "./components/info-block";
 import CollateralSlider from "./components/collateral-section";
@@ -10,6 +9,8 @@ import PositionSize from "./components/position-size-section";
 import CollateralizationRatio from "./components/collateralization-ratio";
 import SpotChange from "./components/spot-change";
 import PageAction from "./components/page-action";
+import LimitPrice from "./components/limit-price";
+import Deadline from "./components/deadline";
 
 import { StyledSectionBox } from "./styles/styled-box-section";
 import { StyledMarketOrderSection } from "./styles/styled-market-order-section";
@@ -18,7 +19,12 @@ import data from "./static/dummy-data.json";
 import formatNumber from "./utils/format-number";
 import { i18nUSDCurrencyFormat } from "../../common/utils/format-currency";
 
+/**
+ * MarketOrder component - Holds market sell flow
+ * @returns jsx
+ */
 const MarketOrder = () => {
+  /** State tracking if youser is on market or limit tab */
   const [currentTab, setCurrentTab] = useState("market");
   return (
     <StyledMarketOrderSection>
@@ -45,6 +51,17 @@ const MarketOrder = () => {
           </div>
           <div>
             <PositionSize />
+            {currentTab === "limit" ? (
+              <>
+                <InfoBlock title="Limit price">
+                  <LimitPrice />
+                </InfoBlock>
+                <InfoBlock title="deadline">
+                  <Deadline />
+                </InfoBlock>
+              </>
+            ) : null}
+
             <CollateralizationRatio />
             <SpotChange />
 
