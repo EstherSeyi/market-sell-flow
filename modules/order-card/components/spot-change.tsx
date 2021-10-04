@@ -5,7 +5,7 @@ import StyledInputLikeSection from "../styles/styled-input-like-section";
 
 const SpotChange = () => {
   return (
-    <InfoBlock title="collateralization ratio">
+    <InfoBlock title="spot change">
       <StyledInputLikeSection>
         <ValueAdjuster />
 
