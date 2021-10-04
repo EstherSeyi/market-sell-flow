@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import Button from "../../../common/components/button";
 
 import ConnectWallet from "./connect-wallet";
 
+import { useStep } from "../custom-hooks/use-step";
+
 const PageAction = () => {
+  const { currentStep, handleCurrentStep } = useStep();
   const [walletIsConnected, setWalletIsConnected] = useState(false);
   const [currentAccount, setCurrentAccount] = useState({});
 
@@ -25,6 +29,7 @@ const PageAction = () => {
       if (accounts.length !== 0) {
         setWalletIsConnected(true);
         setCurrentAccount(accounts[0]);
+        handleCurrentStep(1);
       } else {
         setWalletIsConnected(false);
       }
@@ -35,7 +40,7 @@ const PageAction = () => {
 
   useEffect(() => {
     checkIfWalletIsConnected();
-  }, []);
+  }, [walletIsConnected]);
 
   return (
     <StyledContainer className="page-action__container">
@@ -43,7 +48,36 @@ const PageAction = () => {
         <ConnectWallet
           setCurrentAccount={setCurrentAccount}
           setWalletIsConnected={setWalletIsConnected}
+          // setStage={setStage}
         />
+      ) : currentStep === 1 ? (
+        <Button
+          className="page-action__btn"
+          onClick={() => handleCurrentStep(currentStep + 1)}
+        >
+          Enable WETH Wrapper
+        </Button>
+      ) : currentStep === 2 ? (
+        <Button
+          className="page-action__btn"
+          onClick={() => handleCurrentStep(currentStep + 1)}
+        >
+          APPROVE COLLATERAL
+        </Button>
+      ) : currentStep === 3 ? (
+        <Button
+          className="page-action__btn"
+          onClick={() => handleCurrentStep(currentStep + 1)}
+        >
+          PERMIT OTOKEN
+        </Button>
+      ) : currentStep === 3 ? (
+        <Button
+          className="page-action__btn"
+          onClick={() => handleCurrentStep(currentStep + 1)}
+        >
+          SUBMIT TRADE
+        </Button>
       ) : null}
     </StyledContainer>
   );
