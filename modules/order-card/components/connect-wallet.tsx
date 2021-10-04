@@ -20,7 +20,7 @@ const ConnectWallet = ({
       }
       setConnecting(true);
 
-      const accounts = ethereum.request({
+      ethereum.request({
         method: "eth_requestAccounts",
       });
 
