@@ -13,8 +13,11 @@ import SpotChange from "../modules/order-card/components/spot-change";
 // import Toast from "../common/components/toast";
 
 import { StyledSectionBox } from "../modules/order-card/styles/styled-box-section";
+import { useState } from "react";
 
 const Home: NextPage = () => {
+  const [currentTab, setCurrentTab] = useState("market");
+
   return (
     <Main>
       {/* <Toast /> */}
@@ -22,8 +25,22 @@ const Home: NextPage = () => {
         <DescriptionSection />
         <StyledSectionBox>
           <div className="market-limit-tabs">
-            <button className="market-tab">Market</button>
-            <button className="limit-tab">Limit</button>
+            <button
+              className={`market-tab ${
+                currentTab === "market" ? "tab--focused" : ""
+              }`}
+              onClick={() => setCurrentTab("market")}
+            >
+              Market
+            </button>
+            <button
+              className={`limit-tab ${
+                currentTab === "limit" ? "tab--focused" : ""
+              }`}
+              onClick={() => setCurrentTab("limit")}
+            >
+              Limit
+            </button>
           </div>
           <div>
             <PositionSize />
@@ -97,6 +114,11 @@ const Main = styled.main`
   }
   .limit-tab {
     border-left: 1px solid rgba(41, 37, 53, 0.2);
+  }
+
+  .tab--focused {
+    background: transparent;
+    border-style: none;
   }
 `;
 
