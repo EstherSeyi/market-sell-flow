@@ -23,17 +23,13 @@ const ConnectWallet = ({
         });
       }
       setConnecting(true);
-      const accounts = ethereum.request({
+      ethereum.request({
         method: "eth_requestAccounts",
       });
 
       setWalletIsConnected(true);
       setInitialStep();
       setConnecting(false);
-      Toast({
-        message: `Connected ${accounts[0]}`,
-        type: "error",
-      });
     } catch (error) {
       setConnecting(false);
       Toast({
