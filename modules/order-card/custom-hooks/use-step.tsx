@@ -6,6 +6,8 @@ import {
   useContext,
 } from "react";
 
+import Toast from "../../../common/utils/toast.helper";
+
 const StepContext = createContext<{
   currentStep: number;
   handleCurrentStep: (step: number) => void;
@@ -36,8 +38,17 @@ const StepProvider = ({ children }: { children: ReactNode }) => {
     setTimeout(() => {
       setCurrentStep(step);
       setLoading(false);
+      if (step === 4) {
+        Toast({
+          message: "Success!",
+          type: "success",
+        });
+        setCurrentStep(1);
+      }
     }, 1000);
   };
+
+  console.log(currentStep);
 
   return (
     <StepContext.Provider
