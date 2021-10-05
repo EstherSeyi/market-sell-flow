@@ -6,8 +6,6 @@ import {
   useContext,
 } from "react";
 
-import Toast from "../../../common/utils/toast.helper";
-
 const StepContext = createContext<{
   currentStep: number;
   handleCurrentStep: (step: number) => void;
