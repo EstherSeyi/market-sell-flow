@@ -5,6 +5,7 @@ import Button from "../../../common/components/button";
 import ConnectWallet from "./connect-wallet";
 
 import { useStep } from "../custom-hooks/use-step";
+import Toast from "../../../common/utils/toast.helper";
 
 const PageAction = () => {
   const { currentStep, handleCurrentStep, setInitialStep, loading } = useStep();
@@ -14,10 +15,10 @@ const PageAction = () => {
     try {
       const { ethereum } = window;
       if (!ethereum) {
-        console.log("Make sure you have metamask!");
-        return;
-      } else {
-        console.log("We have the ethereum object", ethereum);
+        return Toast({
+          message: "Please get the Metamask browser extension",
+          type: "error",
+        });
       }
 
       /*
@@ -32,7 +33,10 @@ const PageAction = () => {
         setWalletIsConnected(false);
       }
     } catch (error) {
-      console.log(error);
+      Toast({
+        message: error instanceof Error ? error.message : "Process Failed",
+        type: "error",
+      });
     }
   };
 
