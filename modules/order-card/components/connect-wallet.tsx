@@ -1,7 +1,9 @@
 import { useState } from "react";
-import Button from "../../../common/components/button";
 
 import { useStep } from "../custom-hooks/use-step";
+
+import Button from "../../../common/components/button";
+import Toast from "../../../common/utils/toast.helper";
 
 const ConnectWallet = ({
   setWalletIsConnected,
@@ -15,21 +17,29 @@ const ConnectWallet = ({
       const { ethereum } = window;
 
       if (!ethereum) {
-        alert("Please get the Metamask browser extension");
-        return;
+        return Toast({
+          message: "Please get the Metamask browser extension",
+          type: "error",
+        });
       }
       setConnecting(true);
-
-      ethereum.request({
+      const accounts = ethereum.request({
         method: "eth_requestAccounts",
       });
 
       setWalletIsConnected(true);
       setInitialStep();
       setConnecting(false);
+      Toast({
+        message: `Connected ${accounts[0]}`,
+        type: "error",
+      });
     } catch (error) {
       setConnecting(false);
-      console.log(error);
+      Toast({
+        message: error instanceof Error ? error.message : "Connection Failed!",
+        type: "error",
+      });
     }
   };
 
