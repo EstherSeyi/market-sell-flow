@@ -94,7 +94,11 @@ const PageAction = () => {
         >
           SUBMIT TRADE
         </Button>
-      ) : null}
+      ) : (
+        <Button className="page-action__btn" onClick={() => setInitialStep()}>
+          START OVER?
+        </Button>
+      )}
     </StyledContainer>
   );
 };
