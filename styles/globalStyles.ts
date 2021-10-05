@@ -73,7 +73,7 @@ button
   }
 }
 
-button,
+/* button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
@@ -92,7 +92,7 @@ button:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
-}
+} */
 
 .main{
   padding:.25em;
