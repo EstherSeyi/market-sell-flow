@@ -25,6 +25,7 @@ const StyledButton = styled.button<IProps>`
   font-size: 14px;
   cursor: pointer;
   background-color: ${({ color }) => (color ? color : "#49d273")};
+  ${disabledStyle()}
 `;
 
 const Button = ({ children, color, isLoading, ...props }: IProps) => {
