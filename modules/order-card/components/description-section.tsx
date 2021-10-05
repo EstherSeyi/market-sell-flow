@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 import Button from "../../../common/components/button";
@@ -11,6 +12,7 @@ import data from "../static/dummy-data.json";
 import formatExpiryDate from "../utils/format-expiry-date";
 
 const DescriptionSection = () => {
+  const [currentAction, setCurrentAction] = useState("sell");
   return (
     <Styles>
       <div className="description__topic-container">
@@ -19,10 +21,20 @@ const DescriptionSection = () => {
       </div>
       <div>
         <div className="description__btns">
-          <Button className="description__btn--buy description__btn">
+          <Button
+            className={`description__btn--buy description__btn ${
+              currentAction === "buy" ? "focus-sell-btn" : ""
+            }`}
+            onClick={() => setCurrentAction("buy")}
+          >
             Buy
           </Button>
-          <Button className="description__btn--sell description__btn">
+          <Button
+            className={`description__btn--sell description__btn ${
+              currentAction === "sell" ? "focus-sell-btn" : ""
+            }`}
+            onClick={() => setCurrentAction("sell")}
+          >
             Sell
           </Button>
         </div>
@@ -106,6 +118,13 @@ const Styles = styled(StyledSectionBox)`
       color: var(--color-light);
     }
     ${disabledStyle()}
+  }
+  .focus-sell-btn {
+    background: var(--color-red);
+    color: var(--color-light);
+  }
+  .focus-buy-btn {
+    background: var(--color-green-2);
   }
   .description__token {
     font-size: 1.125rem;
