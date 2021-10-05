@@ -67,6 +67,7 @@ const PageAction = () => {
           className="page-action__btn"
           onClick={() => handleCurrentStep(currentStep + 1)}
           isLoading={loading}
+          disabled={loading}
         >
           Enable WETH Wrapper
         </Button>
@@ -75,6 +76,7 @@ const PageAction = () => {
           className="page-action__btn"
           onClick={() => handleCurrentStep(currentStep + 1)}
           isLoading={loading}
+          disabled={loading}
         >
           APPROVE COLLATERAL
         </Button>
@@ -83,6 +85,7 @@ const PageAction = () => {
           className="page-action__btn"
           onClick={() => handleCurrentStep(currentStep + 1)}
           isLoading={loading}
+          disabled={loading}
         >
           PERMIT OTOKEN
         </Button>
@@ -91,6 +94,7 @@ const PageAction = () => {
           className="page-action__btn"
           onClick={() => handleCurrentStep(currentStep + 1)}
           isLoading={loading}
+          disabled={loading}
         >
           SUBMIT TRADE
         </Button>
