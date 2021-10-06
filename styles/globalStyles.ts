@@ -5,7 +5,9 @@ html {
   overscroll-behavior: contain none !important;
   scroll-behavior: smooth;
   box-sizing: border-box;
+  height: 100%;
 }
+
 *,
 *::before,
 *::after {
@@ -44,7 +46,11 @@ html {
     margin: 0;
     padding: 0;
     font-family: var(--fontfamily-primary);
-    font-size: var(--fontsize-body)
+    font-size: var(--fontsize-body);
+    height: 100%;
+  }
+  #__next {
+    height: 100%;
   }
   ul {
 list-style-type: none;}
@@ -96,6 +102,7 @@ button:-moz-focusring,
 
 .main{
   padding:.25em;
+  height: 100%;
 }
 `;
 
