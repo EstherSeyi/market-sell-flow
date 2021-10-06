@@ -23,7 +23,7 @@ const DescriptionSection = () => {
         <div className="description__btns">
           <Button
             className={`description__btn--buy description__btn ${
-              currentAction === "buy" ? "focus-sell-btn" : ""
+              currentAction === "buy" ? "focus-buy-btn" : ""
             }`}
             onClick={() => setCurrentAction("buy")}
           >
