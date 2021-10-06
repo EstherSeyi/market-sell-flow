@@ -13,7 +13,7 @@ export const StyledMarketOrderSection = styled.section`
     height: 14px;
   }
   .page-content {
-    height: calc(100vh - 37px - 5rem);
+    height: calc(100vh - 7rem);
     overflow-y: scroll;
   }
 
