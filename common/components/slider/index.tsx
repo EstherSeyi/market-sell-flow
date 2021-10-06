@@ -1,7 +1,12 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
 
-const StyledLabel = styled.label`
+const StyledLabel = styled.label<{
+  min: number;
+  max: number;
+  value: number;
+  colVal?: number;
+}>`
   position: relative;
   display: flex;
   align-items: center;
@@ -15,7 +20,7 @@ const StyledLabel = styled.label`
     height: 6px;
     z-index: 2;
     border-radius: 5px;
-    ${({ min, max, value }: { min: number; max: number; value: number }) => css`
+    ${({ min, max, value }) => css`
       background: linear-gradient(
         to right,
         var(--color-green-1) 0%,
@@ -67,9 +72,20 @@ const StyledLabel = styled.label`
   .collateral-range__percent--hundred-percent {
     left: 95%;
   }
+  .collateral-range__colVal {
+    ${({ colVal }) =>
+      colVal &&
+      css`
+        padding: 0.5em 0.125em;
+        background: var(--color-grey-3);
+        position: absolute;
+        z-index: 2;
+        left: ${colVal}%;
+      `};
+  }
 `;
 
-const CollateralSlider = () => {
+const CollateralSlider = ({ colVal = 0 }) => {
   const [state, setState] = useState(75);
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -77,7 +93,13 @@ const CollateralSlider = () => {
   };
 
   return (
-    <StyledLabel htmlFor="collateral-range" value={state} min={0} max={100}>
+    <StyledLabel
+      htmlFor="collateral-range"
+      value={state}
+      min={0}
+      max={100}
+      colVal={colVal}
+    >
       <input
         type="range"
         id="collateral-range"
@@ -87,6 +109,7 @@ const CollateralSlider = () => {
         onChange={handleChange}
         value={state}
       />
+      <span className="collateral-range__colVal"></span>
       <span className="collateral-range__percent collateral-range__percent--zero-percent">
         0%
       </span>

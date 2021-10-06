@@ -26,6 +26,17 @@ import { i18nUSDCurrencyFormat } from "../../common/utils/format-currency";
 const MarketOrder = () => {
   /** State tracking if youser is on market or limit tab */
   const [currentTab, setCurrentTab] = useState("market");
+
+  const [spotChange, setSpotChange] = useState(25);
+  const handleValue = (type: string) => {
+    type === "add"
+      ? setSpotChange((prevState) =>
+          prevState !== 100 ? prevState + 1 : prevState
+        )
+      : setSpotChange((prevState) =>
+          prevState !== 0 ? prevState - 1 : prevState
+        );
+  };
   return (
     <StyledMarketOrderSection>
       <div className="page-content">
@@ -63,9 +74,9 @@ const MarketOrder = () => {
             ) : null}
 
             <CollateralizationRatio />
-            <SpotChange />
+            <SpotChange spotChange={spotChange} handleValue={handleValue} />
 
-            <CollateralSlider />
+            <CollateralSlider spotChange={spotChange} />
 
             <InfoBlock secondary title="Liquidation price">
               <span>

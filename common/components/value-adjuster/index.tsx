@@ -3,13 +3,23 @@ import styled from "styled-components";
 import Plus from "../../../public/svgs/plus.svg";
 import Minus from "../../../public/svgs/minus.svg";
 
-const ValueAdjuster = () => {
+const ValueAdjuster = ({
+  handleValue,
+}: {
+  handleValue: (type: string) => void;
+}) => {
   return (
     <StyledContainer>
-      <button className="value-adjuster-btn value-adjuster-btn--decreament">
+      <button
+        className="value-adjuster-btn value-adjuster-btn--decreament"
+        onClick={() => handleValue("minus")}
+      >
         <Minus className="minus-icon" />
       </button>
-      <button className="value-adjuster-btn value-adjuster-btn--increament">
+      <button
+        className="value-adjuster-btn value-adjuster-btn--increament"
+        onClick={() => handleValue("add")}
+      >
         <Plus className="plus-icon" />
       </button>
     </StyledContainer>

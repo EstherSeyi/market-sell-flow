@@ -4,7 +4,7 @@ import Safe from "../../../public/svgs/safe.svg";
 
 import Slider from "../../../common/components/slider";
 
-const CollateralSlider = () => {
+const CollateralSlider = ({ spotChange }: { spotChange: number }) => {
   return (
     <StyledSection>
       <div className="collateral__header">
@@ -14,7 +14,7 @@ const CollateralSlider = () => {
         </div>
         <span className="collateral__header-text">Collateral %</span>
       </div>
-      <Slider />
+      <Slider colVal={spotChange} />
     </StyledSection>
   );
 };
