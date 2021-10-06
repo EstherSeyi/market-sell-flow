@@ -6,6 +6,7 @@ export const StyledMarketOrderSection = styled.section`
   margin: 0 auto;
   margin-top: 1em;
   padding-top: 1em;
+  height: 100%;
 
   .info-icon {
     color: rgba(119, 117, 126, 0.5);
@@ -13,7 +14,7 @@ export const StyledMarketOrderSection = styled.section`
     height: 14px;
   }
   .page-content {
-    height: calc(100vh - 7rem);
+    height: calc(100% - 5rem);
     overflow-y: scroll;
   }
 
